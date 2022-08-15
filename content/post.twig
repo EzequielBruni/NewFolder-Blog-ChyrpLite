@@ -1,0 +1,78 @@
+<article class="content {{ post.feather }}{{ post.pinned ? ' pinned' : '' }}" id="post_{{ post.id }}">
+
+	{# Post meta information: the date, and the category if that module is enabled. #}
+
+	<div class="metaHeader">
+		<date>
+			<a href="{{ post.url() }}" rel="bookmark" title="{{ 'Permanent link to &#8220;%s&#8221;' | translate | format(post.title() | oneof(post.slug) | striptags | normalize | fix(true)) }}">
+			{% if post.status == "draft" %}
+			{{ "Draft" | translate }}
+			{% elseif post.status == "scheduled" %}
+			{{ "Scheduled" | translate }}
+			{% elseif post.pinned %}
+			{{ "Pinned" | translate }}
+			{% else %}
+			{{ post.created_at | dateformat }}
+			{% endif %}
+			</a>
+		</date>
+
+		{% if module_enabled("categorize") and post.category is defined %}
+		|
+		<a class="category category_{{ post.category.id }}" href="{{ post.category.url }}" rel="tag">
+		{{ post.category.name | oneof("[Untitled]" | translate) }}
+		</a>
+		{% endif %}
+
+	</div>
+
+	{# The actual pst content. #}
+
+	{% block content %}{% endblock %}
+
+	{# Additional post information/functionality. #}
+
+	<footer role="note">
+	
+		{# A list of the post's tags (if enabled) #}
+
+		{% if (module_enabled("tags") and post.tags_link is not empty) %}
+		<div class="tags">
+			<a href="{{ url('tags') }}">{{ "Tags" | translate }}:</a> {{ post.tags_link | join(" ") }}
+		</div>
+		{% endif %}
+		
+		<div class="interaction">
+			{# Support for the Likes plugin #}
+			{% if module_enabled("likes") %}
+			{{ post.like_link ? "" ~ post.like_link : "" }}
+			{% endif %}
+
+			{# Support for comments #}
+			{% if module_enabled("comments") and post.comment_status is defined %}
+				{% if post.comment_status == "closed" %}
+				{{ "Comments closed" | translate }}
+				{% else %}
+				<a href="{{ post.url() }}#comments" rel="bookmark" title="{{ 'View comments' | translate }}">
+				{{ "%s comment" | translate_plural("%s comments", post.comment_count) | format(post.comment_count) }}
+				</a>
+				{% endif %}
+			{% endif %}
+		</div>
+
+		{# Support for the copyright information module. #}
+		
+		{% if module_enabled("rights") and post.rights_holder is defined %}
+		<div class="rights">
+			{% if post.rights_holder is not empty %}
+			{{ "&copy; %s, %s." | translate | format(post.rights_holder, post.licence_link) }}
+			{% else %}
+			{{ "&copy; %s." | translate | format(post.licence_link) }}
+			{% endif %}
+		</div>
+		{% endif %}
+
+	</footer>
+
+	
+</article>

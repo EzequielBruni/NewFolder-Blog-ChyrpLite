@@ -1,0 +1,29 @@
+// General styles for the overall page
+
+div.headerWrap, div.contentWrap, div.navWrap, div.footerWrap {
+	padding: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+	div.headerWrap, div.contentWrap, div.navWrap, div.footerWrap {
+			max-width: 900px;
+			margin: 0 auto;
+			margin-right: auto;
+	}
+}
+
+div.headerWrap {
+	border-top: .5rem solid var(--primary-color);
+	padding-bottom: 0;
+}
+
+div.contentWrap {
+	min-height: 40vh;
+}
+
+
+div.navWrap {
+	background-color: var(--background-color-1);
+}
+
+

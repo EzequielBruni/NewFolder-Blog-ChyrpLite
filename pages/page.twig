@@ -1,0 +1,58 @@
+{% extends "layouts" ~ DIR ~ "default.twig" %}
+
+
+{# The main page content. #}
+{% block content %}
+<article id="page_{{ page.id }}" class="content">
+
+	<header>
+		{% if page.slug == "home" %}
+
+		{% else %}
+		<h2>{{ page.title }}</h2>
+		{% endif %}
+	</header>
+
+	<section>
+	{{ page.body }}
+	</section>
+</article>
+
+{# A list of chald pages that will only show up on a static home page. #}
+{% if page.slug == "home" and page.children is not null %}
+	<nav class="homepageList">
+		<ul>
+			{# Sorting child pages in alphabetical order #}
+	
+			{% for child in page.children|sort((a, b) => a.title <=> b.title) %}
+			<li class="project">
+				<a href="{{ child.url }}"><h3>{{ child.title }}</h3></a>
+			</li>
+			{% endfor %}
+		</ul>
+
+	</nav>
+	{% endif %}
+
+{# A list of recent posts that will only be shown on a static home page. #}
+
+{% if page.slug == "home" and theme.recent_posts() is not empty %}
+
+<nav class="recentPosts">
+	
+	<h3>{{ "Recent Posts" | translate }}</h3>
+	<ul class="navigation sidebar recent_posts" aria-labelledby="label_recent_posts">
+		{% for post in theme.recent_posts() %}
+		<li>
+			<a href="{{ post.url() }}">{{ post.title() }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</nav>
+
+{% endif %}
+
+{% endblock %}
+
+
+

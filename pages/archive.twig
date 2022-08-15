@@ -1,0 +1,75 @@
+{% extends "layouts" ~ DIR ~ "default.twig" %}
+
+{% block content %}
+
+{# The markup for yearly archives. #}
+{% if months is not empty %}
+
+<nav class="paginated">
+	{% if archive.prev is not empty %}
+	<a href="{{ url('archive/%s/' | format(archive.prev | dateformat('Y'))) }}">
+		{{ "&larr; Archive of %s" | translate | format(archive.prev | dateformat("Y")) }}
+	</a>
+	{% endif %}
+
+	{% if archive.next is not empty %}
+	<a href="{{ url('archive/%s/' | format(archive.next | dateformat('Y'))) }}">
+	{{ "Archive of %s &rarr;" | translate | format(archive.next | dateformat("Y")) }}
+	</a>
+	{% endif %}
+</nav>
+
+<nav class="archive">
+	{% for when, month in months %}
+	<h2 id="label_{{ when }}_archive" class="archive">
+		<a href="{{ url('archive/%s/' | format(when | dateformat('Y/m'))) }}">
+			{{ when | dateformat("F Y" | translate) }}
+		</a>
+	</h2>
+
+	<ul aria-labelledby="label_{{ when }}_archive" class="archive">
+		{% for post in month %}
+
+			{% if post.title is not empty %}
+			<li>
+				<a href="{{ post.url() }}">{{ post.title() }}</a>
+			</li>
+			{% endif %}
+
+		{% endfor %}
+	</ul>
+{% endfor %}
+</nav>
+
+<nav class="paginated">
+	{% if archive.prev is not empty %}
+	<a href="{{ url('archive/%s/' | format(archive.prev | dateformat('Y'))) }}">
+		{{ "&larr; Archive of %s" | translate | format(archive.prev | dateformat("Y")) }}
+	</a>
+	{% endif %}
+
+	{% if archive.next is not empty %}
+	<a href="{{ url('archive/%s/' | format(archive.next | dateformat('Y'))) }}">
+	{{ "Archive of %s &rarr;" | translate | format(archive.next | dateformat("Y")) }}
+	</a>
+	{% endif %}
+</nav>
+
+{% endif %}
+
+{# Posts (For daily/monthly archives) #}
+{% if posts.paginated is not empty %}
+<h3 role="status">
+	{{ "Archive of %s" | translate | format(archive.when | dateformat(archive.depth == "day" ? "d F Y" : "F Y")) }}
+</h3>
+{% for post in posts.paginated %}
+	{% include(["feathers" ~ DIR ~ post.feather ~ ".twig", "feathers" ~ DIR ~ "missing.twig"]) %}
+{% endfor %}
+{% endif %}
+
+{# No results #}
+{% if months is empty and posts.paginated is empty %}
+<h3 role="status">{{ "There aren't any posts in the timeframe you specified." | translate }}</h3>
+{% endif %}
+
+{% endblock %}

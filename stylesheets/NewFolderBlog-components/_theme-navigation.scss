@@ -1,0 +1,80 @@
+/* These styles govern the look of the navigation links at the 
+   bottom of every page. If the home page is static, the most
+   recent posts will be listed there, and also use these styles. */
+
+nav#siteNav, nav.recentPosts, nav.archive {
+
+	display: grid;
+	grid-template-columns: minmax(min-content, 33.33%) 1fr;
+	align-items: start;
+
+	h2, h3, h4 {
+		padding-right: 2rem;
+		text-align: right;
+	}
+
+	ul {
+		border-top: 1px dashed var(--secondary-color);
+		
+		li {
+			padding-top: 1.05rem;
+
+			&::before {
+				content: "> ";
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+// Pagination Styles
+
+nav.paginated {
+	display: grid;
+	grid-template-columns: 1fr;
+	
+	a {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 700px) {
+
+	nav.paginated {
+		grid-template-columns: 1fr 1fr;
+
+		a.next_page {
+			text-align: right;
+			grid-column-start: 2;
+			
+		}
+	}
+	
+}
+
+/* The styles for the list of the Home page's direct children. 
+   This is only visible on the home page... and only if it
+   has children. And only if the home page is a static page. */
+
+nav.homepageList {
+	margin-bottom: 4rem;
+
+	ul {
+		li {
+			padding: 0;
+			margin-bottom: 1px;
+			
+			h3 {
+				margin: 0;
+				padding: .5rem;
+			}
+
+			a {
+				text-decoration: none;
+				display: block;
+				border-left: .3rem solid var(--primary-color);
+				background-color: var(--tertiary-color);
+			}
+		}
+	}	
+} 

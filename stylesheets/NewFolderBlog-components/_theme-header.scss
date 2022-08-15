@@ -1,0 +1,84 @@
+// Basic header styles
+
+header#pageHeader {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr; 
+	grid-template-rows: min-content 1fr;
+	gap: 2rem 0px;
+
+	// Logo styles.
+
+		* {
+			white-space: nowrap;
+		}
+
+		div.logo {
+			display: grid;
+			grid-template-columns: min-content min-content;
+			justify-self: center;
+		}
+
+		h1 {
+			margin: 0;
+
+			a {
+				font-size: 1.3em;
+				text-decoration: none;
+				color: var(--text-color-1);
+			}	
+		}
+
+		// Styles for the "blog" link
+
+		span {
+			display: block;
+			font-family: var(--heading-font);
+		}
+
+		// Styles for the search box
+
+
+		form.searchBox {
+			display: grid;
+			grid-template-columns: 1fr min-content;
+			margin: 0;
+			margin-top: -1px;
+			
+	
+			label {
+				display: none;
+			}
+		
+			input[type=text] {
+				min-width: 300px;
+				margin-top: 0;
+				border-radius: 0;
+				border-right: 0px;
+				height: 2rem;
+			
+				&:focus {
+					border-color: var(--primary-color);
+					border-radius: 0;
+					outline: var(--primary-color);
+					border-right: 0px;
+				}
+			}
+		
+			button{
+				display: inline;
+				text-indent: -9999em;
+				width: 3em;
+				height: 2rem;
+				border-radius: 0;
+				@include icon-search-eye-darkmode;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 1.5em 1.5em;
+				}
+		
+			button:hover, button:focus, button:active{
+				cursor: pointer;
+			}
+		}
+	}

@@ -1,0 +1,167 @@
+
+// Basic post styles
+
+article.content {
+	border-top: 1px solid var(--secondary-color);
+	margin-bottom: 4rem;
+
+	&:only-of-type {
+		margin-bottom: 0;
+	}
+
+	/* Changing the spacing for the first paragraph if it's the first
+	   child element in a post, and making the first paragraph's text a 
+	   bit bigger. */
+
+	> section p {
+
+		&:first-child {
+			margin-top: 1.05rem;
+		}
+
+		&:first-of-type {
+			font-size: 1.3em;
+		}
+	}
+
+	// Styles for the post date & category.
+
+	.metaHeader { 
+		padding-top: 1rem;
+		text-align: center;
+
+		a {
+			padding: .5rem;
+		}
+
+	}
+
+	// Alternate meta styles for pinned posts.
+
+	&.pinned {
+
+		.metaHeader{
+			date {
+				padding-right: .5rem;
+				a {
+					color: white;
+					background-color: var(--primary-color);
+				}
+			}
+		}
+		
+	}
+
+	// Styles for quote posts
+
+	figure.quote {
+		margin-top: 2rem;
+	}
+
+	// Styles for file attachment posts
+
+	section.attachment {
+		background-color: var(--background-color-1);
+		padding: .5rem;
+	}
+
+	// Styles for media posts
+
+	section.photo, section.video, section.audio {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	// Styles for metadata and functionality in the post footer.
+
+	footer {
+		border-top: 1px dotted var(--secondary-color);
+		padding-top: 1rem;
+
+		div.tags {
+			padding-bottom: .5rem;
+		}
+
+		div.likes {
+			display: inline-block;
+
+			img {
+				border: none;
+			}
+
+			&::after {
+				content: " |";
+			}
+
+			a.like {
+				display: inline-block;
+				
+			}
+
+			span.like_text {
+
+				padding-left: .3rem;
+
+				&::before {
+					content: "> ";
+				}
+
+				&:only-child {
+					padding: 0;
+
+					&::before {
+						content: "";
+					}
+				}
+			}
+		}
+
+		div.rights {
+			font-size: var(--small-text);
+		}
+	}
+}
+
+// Add a little padding to articles on larger screens.
+
+@media screen and (min-width: 900px) {
+	article.content {
+		padding: 2rem;
+	}
+}
+
+// Default global styles for tag links.
+
+a.tag {
+	background-color: var(--tertiary-color);
+	display: inline-block;
+	padding: .3rem;
+	margin-left: .3rem;
+}
+
+// Make audio and video playes stretch to fit the witdth of posts.
+
+audio, video {
+	width: 100%;
+}
+
+// Make the placeholder text look better in the dark theme.
+
+@media (prefers-color-scheme: dark) {
+	input::placeholder {
+		color: rgba(255,255,255,0.7)
+	}
+}
+
+// A little styling for post previews.
+
+div.standalone section {
+	padding: 2rem;
+}
+
+/* This will prevent conflicts in background color between the
+   default styles and the syntax highlighting plugin. */
+
+code.hljs {
+	margin: -1rem;
+}

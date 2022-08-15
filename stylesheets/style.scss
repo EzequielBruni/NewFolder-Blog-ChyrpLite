@@ -1,0 +1,25 @@
+/* Import styles from NewFolder */
+
+// Essential styles
+@import "NewFolder/_reset.scss";
+@import "NewFolder/_variables.scss"; // << Edit this file to change all theme variables.
+@import "NewFolder/_type.scss";
+@import "NewFolder/_helper-classes.scss";
+
+// Component styles (Also essential for our purposes in this Chyrp Lite theme)
+@import "NewFolder/_mixins.scss";
+@import "NewFolder/_content-components.scss";
+@import "NewFolder/_forms.scss";
+
+// Optional styles for breadcrumb and dropdown/accordion navigation
+// These should not be needed for this theme.
+// @import "NewFolder/_navigation.scss";
+
+// Styles specific to this Chyrp Lite theme
+
+@import "NewFolderBlog-components/_theme-layout.scss";
+@import "NewFolderBlog-components/_theme-header.scss";
+@import "NewFolderBlog-components/_theme-content.scss";
+@import "NewFolderBlog-components/_theme-navigation.scss";
+@import "NewFolderBlog-components/_theme-comments.scss";
+@import "NewFolderBlog-components/_theme-forms.scss";

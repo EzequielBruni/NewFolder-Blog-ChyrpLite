@@ -1,0 +1,44 @@
+{% extends "layouts" ~ DIR ~ "default.twig" %}
+
+{% block content %}
+
+	{# Next and Previous links for individual posts. #}
+	{% if not post.prev.no_results %}
+		<div role="navigation" class="prev traversal">
+			<a rel="prev" href="{{ post.prev.url() }}">{{ "&larr; Next post" | translate }}</a>
+	</div>
+	{% endif %}
+
+	{# The list of posts. #}
+
+	{% include(["feathers" ~ DIR ~ post.feather ~ ".twig", "feathers" ~ DIR ~ "missing.twig"]) %}
+
+	{# Next and Previous links for individual posts. #}
+
+	{% if not post.next.no_results %}
+	<div role="navigation" class="next traversal">
+		<a rel="next" href="{{ post.next.url() }}">{{ "Previous post &rarr;" | translate }}</a>
+	</div>
+	{% endif %}
+
+	{# Support for comments if enabled. #}
+
+	{% if module_enabled("comments") and (post.comment_count > 0 or post.commentable) %}
+	
+	<div role="complementary" class="commentary">
+	
+		<ol id="comments" class="comments" data-post_id="{{ post.id }}" data-timestamp="{{ post.latest_comment }}">
+			{% for comment in post.comments %}
+			{% include "content" ~ DIR ~ "comment.twig" %}
+			{% endfor %}
+
+			<li id="comment_shim"></li>{# Needed for AJAX commenting. #}
+			{% if post.commentable %}
+			<li class="comment_form">
+				{% include "forms" ~ DIR ~ "comment" ~ DIR ~ "new.twig" %}
+			</li>
+		{% endif %}
+		</ol>
+	</div>
+{% endif %}
+{% endblock %}

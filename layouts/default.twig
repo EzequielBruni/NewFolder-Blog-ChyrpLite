@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale | lang_base }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}{{ site.name | fix }}{{ title is not empty ? " | " ~ title | striptags | fix : "" }}{% endblock %}</title>
+		<meta name="description" content="{{ site.description }}">
+		<meta name="viewport" content="initial-scale = 1.0">
+		<link rel="icon" sizes="32x32" type="image/x-icon" href="{{ site.chyrp_url }}/favicon.ico">
+		<link rel="icon" sizes="any" type="image/svg+xml" href="{{ site.chyrp_url }}/favicon.svg">
+		<link rel="mask-icon" href="{{ site.chyrp_url }}/favicon.svg" color="#4f4f4f">
+		{{ theme.feeds() }}
+		{{ theme.stylesheets() }}
+		{{ theme.javascripts() }}
+		{{ trigger.call("end_head") }}
+
+	</head>
+	<body class="route_{{ route.action }}">
+
+	{# The general page header. #}
+
+	<div class="headerWrap">
+
+		<header id="pageHeader" role="banner">
+			
+			<div class="logo">
+
+				{# The logotype goes here. #}
+
+				<h1><a href="{{ url('/') }}">{{ site.name }}</a></h1>
+
+				{# If the blog has a home page, a link to the blog will be shown in the header. If you want to use a different slug for your home page, change it below. #}
+				{% if theme.pages_list() is not empty %}
+					{% for item in theme.pages_list %}
+						{% if item.slug == "home" %}
+						<span>/ <a href="{{ url('/index') }}">blog</a></span>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			</div>
+
+			{# The following is markup for conditional error messages, and can be left alone. #}
+
+			{% for notice in flash.notices %}
+			<div class="alert generalinfo">
+				<h3 role="alert">{{ notice }}</h3>
+			</div>
+			{% endfor %}
+
+			{% for warning in flash.warnings %}
+			<div class="alert warning">
+				<h3 role="alert">{{ warning }}</h3>
+			</div>
+			{% endfor %}
+
+			{% for message in flash.messages %}
+			<div class="alert mild">
+				<h3 role="alert">{{ message }}</h3>
+			</div>
+			{% endfor %}
+
+			{# The search box. #}
+
+			<form class="searchBox content" action="{{ url('search') }}" method="post" accept-charset="UTF-8" role="search">
+
+				<input type="text" id="searchField" name="query" value="{{ search is defined ? search | fix(true) : '' }}" placeholder="{{ 'Search&hellip;' | translate }}" aria-label="{{ 'Search this blog' | translate }}">
+
+				<button type="submit" id="searchSubmit">{{ "Search" | translate }}</button>
+			</form>
+
+		</header>
+
+	</div>
+
+	{# General page or post content goes here. #}
+	
+	<div class="contentWrap">
+
+		<nav class="paginated">
+			{% if posts.paginated is defined and posts.prev_page() %}
+			{{ posts.prev_link("&larr; Newer posts" | translate) }}
+			{% endif %}
+			
+			{% if posts.paginated is defined and posts.next_page() %}
+			{{ posts.next_link("Older posts &rarr;" | translate) }}
+			{% endif %}	
+		</nav>
+
+		<!-- Content -->
+		<section id="pageContent" role="main">
+			{% block content %}{% endblock %}
+		</section>
+
+
+		<nav class="paginated">		
+			{% if posts.paginated is defined and posts.prev_page() %}
+			{{ posts.prev_link("&larr; Newer posts" | translate) }}
+			{% endif %}
+			
+			{% if posts.paginated is defined and posts.next_page() %}
+			{{ posts.next_link("Older posts &rarr;" | translate) }}
+			{% endif %}	
+		</nav>
+
+	</div>
+
+	<!-- Site Navigation -->
+
+	<div class="navWrap">
+
+		<nav id="siteNav">
+			{% if theme.pages_list() is not empty %}
+			<h4>{{ "Links" | translate }}</h4>
+			<ul aria-labelledby="label_my_pages">
+				{% for item in theme.pages_list() %}
+				<li class="page">
+				{{ "&nbsp;" | repeat((item.depth - 1) * 4) }}<a href="{{ item.url() }}">{{ item.title }}</a>
+				</li>
+				{% endfor %}
+				
+				<li>
+					<a href="{{ url('archive') }}" rel="archives">{{ "Archive" | translate }}</a>
+				</li>
+
+				<li>
+					<a href="{{ url('feed') }}">{{ "Feed" | translate }}</a>
+				</li>
+			</ul>
+			{% endif %}
+
+
+			{% if module_enabled("categorize") and categorize is not empty %}
+			<h4>{{ "Categories" | translate }}</h4>
+			<ul aria-labelledby="label_categories">
+			{% for category in categorize %}
+				<li>
+				<a href="{{ category.url }}">{{ category.name | oneof("[Untitled]" | translate) }}</a>
+				</li>
+			{% endfor %}
+
+			
+
+			</ul>
+			{% endif %}
+
+			{# Uncomment the code below if you want to have Admin links of any kind available. I prefer to keep them off. #}
+
+			{# <h4>{{ "Admin" | translate }}</h4>
+			
+			<ul class="navigation" aria-label="{{ 'Links' | translate }}">
+				<li>
+					<a href="{{ mailto(site.email) }}">{{ "Email" | translate }}</a>
+				</li>
+				
+				{% if visitor.group.can("change_settings", "toggle_extensions") %}
+				<li>
+					<a href="{{ url('/', 'AdminController') }}">{{ "Admin" | translate }}</a>
+				</li>
+				{% elseif visitor.group.can("add_post") %}
+				<li>
+					<a href="{{ url('/', 'AdminController') }}">{{ "Write" | translate }}</a>
+				</li>
+				{% elseif visitor.group.can("add_draft") %}
+				<li>
+					<a href="{{ url('/', 'AdminController') }}">{{ "Draft" | translate }}</a>
+				</li>
+				{% endif %}
+				{% if visitor.logged_in %}
+				<li>
+					<a href="{{ url('controls') }}">{{ "Controls" | translate }}</a>
+				</li>
+				<li>
+					<a href="{{ url('logout') }}">{{ "Log out" | translate }}</a>
+				</li>
+				{% else %}
+				{% if site.can_register %}
+				<li>
+					<a href="{{ url('register') }}">{{ "Register" | translate }}</a>
+				</li>
+				{% endif %}
+				<li>
+					<a href="{{ url('login') }}">{{ "Log in" | translate }}</a>
+				</li>
+				{% endif %} 
+			</ul> #}
+		</nav>
+	</div>
+
+	
+	{{ trigger.call("end_content") }}
+
+	</body>
+
+	<!-- Queries: {{ sql_queries }} | Load Time: {{ theme.load_time() }} -->
+	{% if debug %}
+	<!--
+		{% for caller in sql_debug %}
+		{{ caller.query | replace({"\t": "    "}) | fix }}
+		{{ "Called from %s on line %d at %s seconds." | translate | format(caller.file, caller.line, caller.time) }}
+		{% endfor %}
+		-->
+	{% endif %}
+</html>

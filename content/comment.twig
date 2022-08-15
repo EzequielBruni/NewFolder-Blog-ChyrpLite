@@ -1,0 +1,35 @@
+<li id="comment_{{ comment.id }}" class="content">
+	<article>
+
+		{# Comment data #}
+
+		<header>
+			<date>
+				<a href="{{ comment.url() }}" class="permalink">
+					{{ comment.created_at | dateformat }}
+				</a>
+			</date>
+			
+			<h5>{{ "%s said:" | translate | format(comment.author_link) }}</h5>	
+		</header>
+
+		{# The body text of the comment. #}
+
+		<section class="comment">
+			{% if comment.status == "denied" %}
+			<em>{{ "This comment is awaiting moderation." | translate }}</em>
+			{% else %}
+			{{ comment.body }}
+			{% endif %}
+		</section>
+
+		{# Content edit and delete links (if enabled) #}
+
+		{% if comment.editable() or comment.deletable() %}
+		<footer>
+				{{ comment.edit_link() }} {{ comment.delete_link() }}
+		</footer>
+		{% endif %}
+	</article>
+
+</li>

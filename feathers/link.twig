@@ -1,0 +1,12 @@
+{% extends "content" ~ DIR ~ "post.twig" %}
+
+{% block content %}
+
+<h2>
+	<a href="{{ post.source | striptags | fix(true) }}" class="link">{{ post.name }}</a>
+</h2>
+
+<section>
+	{{ post.description }}
+</section>
+{% endblock %}

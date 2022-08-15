@@ -1,0 +1,35 @@
+<form id="comment_edit_{{ comment.id }}" class="comment_edit" action="{{ url('update_comment') }}" method="post" accept-charset="UTF-8">
+	{# The actual body text of the comment. #}
+	<fieldset>
+		<label for="comment_body_{{ comment.id }}">{{ "Comment" | translate }}</label>
+		<textarea name="body" id="comment_body_{{ comment.id }}">{{ comment.body | fix(false, true) }}</textarea>
+	</fieldset>
+
+	{# Additional options for editing the comment. #}
+	
+	<fieldset id="more_options_{{ comment.id }}" class="more_options">
+		<label for="comment_author_{{ comment.id }}">{{ "Author" | translate }}</label>
+		<input class="text" type="text" name="author" value="{{ comment.author | fix(true) }}" id="comment_author_{{ comment.id }}" maxlength="250">
+
+		{% if visitor.group.can("edit_comment") %}
+		{# User can edit all comments, not just their own. #}
+		<label for="comment_created_at_{{ comment.id }}">{{ "Timestamp" | translate }}</label>
+		<input class="text" type="text" name="created_at" value="{{ comment.created_at | dateformat('Y-m-d H:i:s') | fix(true) }}" id="comment_created_at_{{ comment.id }}">
+		{% endif %}
+
+		{% if site.email_correspondence %}
+		<input type="checkbox" name="notify" id="comment_notify_{{ comment.id }}"{{ comment.notify | checked }}>
+		<label for="comment_notify_{{ comment.id }}">{{ "Email Notifications" | translate }}</label>
+		{% endif %}
+	</fieldset>
+
+	<input type="hidden" name="id" value="{{ comment.id }}">
+	<input type="hidden" name="hash" value="{{ authenticate() }}">
+	<input type="hidden" name="action" value="update_comment">
+
+		<fieldset>
+			<button type="submit">{{ "Save" | translate }}</button>
+			<a href="#" id="comment_cancel_edit_{{ comment.id }}" class="cancel">{{ "Cancel" | translate }}</a>
+		</fieldset>
+
+</form>

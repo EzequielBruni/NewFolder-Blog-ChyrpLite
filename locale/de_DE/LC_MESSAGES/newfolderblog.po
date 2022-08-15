@@ -1,0 +1,418 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. This file is distributed under the same license as the Chyrp Lite package.
+#: themes/newfolderblog/content/comment.twig:3
+#, php-format
+msgid "%s:"
+msgstr "%s:"
+
+#: themes/newfolderblog/content/comment.twig:5
+#, php-format
+msgid "%s said:"
+msgstr "%s hat gesagt:"
+
+#: themes/newfolderblog/content/comment.twig:9
+msgid "This comment is awaiting moderation."
+msgstr "Dieser Kommentar wartet auf die Freigabe durch die Moderation."
+
+#: themes/newfolderblog/content/post.twig:6
+msgid "Tags"
+msgstr "Tags"
+
+#: themes/newfolderblog/content/post.twig:15 themes/newfolderblog/feathers/audio.twig:6
+#: themes/newfolderblog/feathers/photo.twig:6 themes/newfolderblog/feathers/quote.twig:6
+#: themes/newfolderblog/feathers/text.twig:6 themes/newfolderblog/feathers/uploader.twig:6
+#: themes/newfolderblog/feathers/video.twig:6 themes/newfolderblog/pages/archive.twig:38
+#: themes/newfolderblog/pages/page.twig:6
+#, php-format
+msgid "Permanent link to &#8220;%s&#8221;"
+msgstr "Permanentlink zu &#8220;%s&#8221;"
+
+#: themes/newfolderblog/content/post.twig:17 themes/newfolderblog/layouts/default.twig:55
+msgid "Draft"
+msgstr "Entwurf"
+
+#: themes/newfolderblog/content/post.twig:19
+msgid "Scheduled"
+msgstr "Geplant"
+
+#: themes/newfolderblog/content/post.twig:21
+msgid "Pinned"
+msgstr "Angepinnt"
+
+#: themes/newfolderblog/content/post.twig:29 themes/newfolderblog/pages/view.twig:21
+msgid "[Untitled]"
+msgstr "[Unbenannt]"
+
+#: themes/newfolderblog/content/post.twig:37
+msgid "View pingbacks"
+msgstr "Pingbacks anzeigen"
+
+#: themes/newfolderblog/content/post.twig:38
+#, php-format
+msgid "%s pingback"
+msgid_plural "%s pingbacks"
+msgstr[0] "%s Pingback"
+msgstr[1] "%s Pingbacks"
+
+#: themes/newfolderblog/content/post.twig:43
+msgid "Comments closed"
+msgstr "Kommentare geschlossen"
+
+#: themes/newfolderblog/content/post.twig:46
+msgid "View comments"
+msgstr "Kommentare ansehen"
+
+#: themes/newfolderblog/content/post.twig:47
+#, php-format
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s Kommentar"
+msgstr[1] "%s Kommentare"
+
+#: themes/newfolderblog/content/post.twig:54
+#, php-format
+msgid "&copy; %s, %s."
+msgstr "&copy; %s, %s."
+
+#: themes/newfolderblog/content/post.twig:56
+#, php-format
+msgid "&copy; %s."
+msgstr "&copy; %s."
+
+#: themes/newfolderblog/feathers/missing.twig:4
+msgid "The post cannot be displayed because the theme does not support it."
+msgstr ""
+"Der Post kann nicht angezeigt werden, weil dies vom Theme nicht unterstützt "
+"wird."
+
+#: themes/newfolderblog/feathers/uploader.twig:21
+msgid "File attachment:"
+msgstr "Dateianhänge:"
+
+#: themes/newfolderblog/forms/comment/edit.twig:2
+msgid "Comment"
+msgstr "Kommentieren"
+
+#: themes/newfolderblog/forms/comment/edit.twig:5
+msgid "Author"
+msgstr "Autor"
+
+#: themes/newfolderblog/forms/comment/edit.twig:8
+msgid "Author's website"
+msgstr "Website des Autors"
+
+#: themes/newfolderblog/forms/comment/edit.twig:10
+msgid "Author's email"
+msgstr "E-Mail des Autors"
+
+#: themes/newfolderblog/forms/comment/edit.twig:15
+msgid "Timestamp"
+msgstr "Zeitstempel"
+
+#: themes/newfolderblog/forms/comment/edit.twig:18
+msgid "Status"
+msgstr "Status"
+
+#: themes/newfolderblog/forms/comment/edit.twig:20
+msgid "Approved"
+msgstr "Genehmigt"
+
+#: themes/newfolderblog/forms/comment/edit.twig:21
+msgid "Denied"
+msgstr "Abgelehnt"
+
+#: themes/newfolderblog/forms/comment/edit.twig:22
+msgid "Spam"
+msgstr "Spam"
+
+#: themes/newfolderblog/forms/comment/edit.twig:27
+msgid "Email Notifications"
+msgstr "E-Mail Benachrichtigungen"
+
+#: themes/newfolderblog/forms/comment/edit.twig:35
+msgid "Save"
+msgstr "Speichern"
+
+#: themes/newfolderblog/forms/comment/edit.twig:36
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: themes/newfolderblog/forms/comment/new.twig:3
+#, php-format
+msgid "%s's comment"
+msgstr "%s’s Kommentar"
+
+#: themes/newfolderblog/forms/comment/new.twig:5
+msgid "Your name"
+msgstr "Dein Name"
+
+#: themes/newfolderblog/forms/comment/new.twig:7
+msgid "Your email"
+msgstr "Deine E-Mail Adresse"
+
+#: themes/newfolderblog/forms/comment/new.twig:9
+msgid "Your website"
+msgstr "Deine Website"
+
+#: themes/newfolderblog/forms/comment/new.twig:12
+msgid "Your comment"
+msgstr "Dein Kommentar"
+
+#: themes/newfolderblog/forms/comment/new.twig:16
+msgid "Markdown is allowed."
+msgstr "Markdown ist erlaubt."
+
+#: themes/newfolderblog/forms/comment/new.twig:18
+msgid "HTML tags allowed:"
+msgstr "Erlaubte HTML Tags:"
+
+#: themes/newfolderblog/forms/comment/new.twig:20
+msgid "HTML is not allowed."
+msgstr "HTML ist nicht erlaubt."
+
+#: themes/newfolderblog/forms/comment/new.twig:24
+msgid "Notify me when others comment"
+msgstr "Benachrichtige mich, wenn andere kommentieren"
+
+#: themes/newfolderblog/forms/comment/new.twig:37
+msgid "Speak"
+msgstr "Sprich"
+
+#: themes/newfolderblog/forms/user/controls.twig:5
+#: themes/newfolderblog/layouts/default.twig:60
+msgid "Controls"
+msgstr "Details"
+
+#: themes/newfolderblog/forms/user/controls.twig:7
+msgid "Full name"
+msgstr "Voller Name"
+
+#: themes/newfolderblog/forms/user/controls.twig:9
+#: themes/newfolderblog/forms/user/register.twig:13
+#: themes/newfolderblog/layouts/default.twig:37
+msgid "Email"
+msgstr "E-Mail"
+
+#: themes/newfolderblog/forms/user/controls.twig:11
+msgid "Website"
+msgstr "Website"
+
+#: themes/newfolderblog/forms/user/controls.twig:13
+msgid "New password?"
+msgstr "Neues Passwort?"
+
+#: themes/newfolderblog/forms/user/controls.twig:15
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: themes/newfolderblog/forms/user/controls.twig:20
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: themes/newfolderblog/forms/user/login.twig:5
+#: themes/newfolderblog/forms/user/login.twig:14
+#: themes/newfolderblog/layouts/default.twig:72
+msgid "Log in"
+msgstr "Einloggen"
+
+#: themes/newfolderblog/forms/user/login.twig:7
+#: themes/newfolderblog/forms/user/lost_password.twig:8
+#: themes/newfolderblog/forms/user/register.twig:7
+msgid "Username"
+msgstr "Benutzername"
+
+#: themes/newfolderblog/forms/user/login.twig:9
+#: themes/newfolderblog/forms/user/register.twig:9
+#: themes/newfolderblog/forms/user/register.twig:11
+msgid "Password"
+msgstr "Passwort"
+
+#: themes/newfolderblog/forms/user/login.twig:15
+msgid "Help!"
+msgstr "Hilfe!"
+
+#: themes/newfolderblog/forms/user/lost_password.twig:5
+msgid "Lost password"
+msgstr "Passwort vergessen"
+
+#: themes/newfolderblog/forms/user/lost_password.twig:7
+msgid ""
+"Please enter your username below and we will email you a new password for "
+"your account."
+msgstr ""
+"Bitte gib deinen Benutzernamen ein und wir werden dir eine E-Mail mit einem "
+"neuen Passwort senden."
+
+#: themes/newfolderblog/forms/user/lost_password.twig:12
+msgid "Submit"
+msgstr "Absenden"
+
+#: themes/newfolderblog/forms/user/register.twig:5
+#: themes/newfolderblog/forms/user/register.twig:19
+#: themes/newfolderblog/layouts/default.twig:68
+msgid "Register"
+msgstr "Registrieren"
+
+#: themes/newfolderblog/forms/user/register.twig:11
+msgid "(again)"
+msgstr "(wiederholen)"
+
+#: themes/newfolderblog/info.php:3
+msgid "newfolderblog"
+msgstr "Spatz"
+
+#: themes/newfolderblog/info.php:6
+msgid "An unobtrusive tumbleblog theme for Chyrp Lite."
+msgstr "Eine unauffällige Tumbleblog thema für Chyrp Lite."
+
+#: themes/newfolderblog/layouts/default.twig:35
+msgid "Links"
+msgstr "Links"
+
+#: themes/newfolderblog/layouts/default.twig:40
+msgid "Feed"
+msgstr "Feed"
+
+#: themes/newfolderblog/layouts/default.twig:43
+msgid "Archive"
+msgstr "Archiv"
+
+#: themes/newfolderblog/layouts/default.twig:47
+msgid "Admin"
+msgstr "Administration"
+
+#: themes/newfolderblog/layouts/default.twig:51
+msgid "Write"
+msgstr "Schreiben"
+
+#: themes/newfolderblog/layouts/default.twig:63
+msgid "Log out"
+msgstr "Ausloggen"
+
+#: themes/newfolderblog/layouts/default.twig:77
+msgid "Search&hellip;"
+msgstr "Suchen&hellip;"
+
+#: themes/newfolderblog/layouts/default.twig:77
+msgid "Search this blog"
+msgstr "Suchen"
+
+#: themes/newfolderblog/layouts/default.twig:78
+msgid "Search"
+msgstr "Suchen"
+
+#: themes/newfolderblog/layouts/default.twig:84
+msgid "&larr; Newer posts"
+msgstr "&larr; Neuere Posts"
+
+#: themes/newfolderblog/layouts/default.twig:94
+msgid "Older posts &rarr;"
+msgstr "Ältere Posts &rarr;"
+
+#: themes/newfolderblog/layouts/default.twig:105
+#, php-format
+msgid "Called from %s on line %d at %s seconds."
+msgstr "Aufgerufen von %s in Zeile %d in %s Sekunden."
+
+#: themes/newfolderblog/pages/403.twig:4
+msgid "Forbidden."
+msgstr "Nicht erlaubt."
+
+#: themes/newfolderblog/pages/404.twig:4
+msgid "Not found."
+msgstr "Nicht gefunden."
+
+#: themes/newfolderblog/pages/archive.twig:10
+#, php-format
+msgid "&larr; Archive of %s"
+msgstr "&larr; Archiv vom %s"
+
+#: themes/newfolderblog/pages/archive.twig:18
+msgid "F Y"
+msgstr ""
+
+#: themes/newfolderblog/pages/archive.twig:49
+#, php-format
+msgid "Archive of %s &rarr;"
+msgstr "Archiv vom %s &rarr;"
+
+#: themes/newfolderblog/pages/archive.twig:58
+#, php-format
+msgid "Archive of %s"
+msgstr "Archiv vom %s"
+
+#: themes/newfolderblog/pages/archive.twig:67
+msgid "There aren't any posts in the timeframe you specified."
+msgstr "In dem angegebenen Zeitfenster gibt es keine Posts."
+
+#: themes/newfolderblog/pages/category.twig:5
+#, php-format
+msgid "Posts in category &#8220;%s&#8221;"
+msgstr "Posts in der Kategorie &#8220;%s&#8221;"
+
+#: themes/newfolderblog/pages/drafts.twig:5
+msgid "Drafts"
+msgstr "Entwürfe"
+
+#: themes/newfolderblog/pages/drafts.twig:10
+msgid "You don't have any drafts"
+msgstr "Du hast keine Entwürfe"
+
+#: themes/newfolderblog/pages/index.twig:8
+msgid "No posts"
+msgstr "Keine Posts"
+
+#: themes/newfolderblog/pages/search.twig:5
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Suchergebnisse für &#8220;%s&#8221;"
+
+#: themes/newfolderblog/pages/search.twig:7
+msgid "Your search did not return any results."
+msgstr "Deine Suche erzielte keine Ergebnisse."
+
+#: themes/newfolderblog/pages/tag.twig:5
+#, php-format
+msgid "Posts tagged with &#8220;%s&#8221;"
+msgstr "Posts mit den Tags &#8220;%s&#8221;"
+
+#: themes/newfolderblog/pages/tags.twig:6
+msgid "Tag cloud"
+msgstr "Tagcloud"
+
+#: themes/newfolderblog/pages/tags.twig:19
+msgid "Nothing here yet!"
+msgstr "Hier ist noch nichts!"
+
+#: themes/newfolderblog/pages/updated.twig:5
+msgid "Updated posts"
+msgstr "Aktualisierte Posts"
+
+#: themes/newfolderblog/pages/updated.twig:10
+msgid "There aren't any updated posts"
+msgstr "Es gibt keine aktualisierten Posts"
+
+#: themes/newfolderblog/pages/view.twig:6
+msgid "&larr; Next post"
+msgstr "&larr; Nächster Post"
+
+#: themes/newfolderblog/pages/view.twig:12
+msgid "Previous post &rarr;"
+msgstr "Vorheriger Post &rarr;"
+
+#: themes/newfolderblog/pages/view.twig:18
+msgid "Pingbacks"
+msgstr "Pingbacks"

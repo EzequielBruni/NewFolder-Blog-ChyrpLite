@@ -1,0 +1,20 @@
+// Basic styling for forms.
+
+form.content, .content form {
+	div.alert {
+		margin-top: 1rem;
+	}
+}
+
+.user_controls form, form#add_comment, form.comment_edit, div.user_login, div.lost_password, div.user_register  {
+	input[type=text], input[type=email], input[type=url], input[type=number], input[type=password] {
+		max-width: 50%;
+		min-width: 200px;
+		margin-bottom: .5rem;
+	}
+
+	a.cancel {
+		margin-left: 1rem;
+	}
+	
+}

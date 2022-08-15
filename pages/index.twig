@@ -1,0 +1,13 @@
+{% extends "layouts" ~ DIR ~ "default.twig" %}
+
+{% block content %}
+{% if reason is not defined %}{# Some modules define reason in error states #}
+{% for post in posts.paginated %}
+{% include(["feathers" ~ DIR ~ post.feather ~ ".twig", "feathers" ~ DIR ~ "missing.twig"]) %}
+{% else %}
+	<h3 role="status">{{ "No posts" | translate }}</h3>
+{% endfor %}
+{% else %}
+	<h3 role="status">{{ reason }}</h3>
+{% endif %}
+{% endblock %}

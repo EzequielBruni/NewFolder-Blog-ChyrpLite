@@ -1,0 +1,16 @@
+{# This is come very basic markup for post previews. My recommendation, don't touch it. #}
+<!DOCTYPE html>
+<html lang="{{ site.locale | split('_') | first }}">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{{ theme.url }}/stylesheets/style.css" type="text/css" media="all">
+<title>{{ title }}</title>
+</head>
+<body class="preview">
+	<div class="standalone content">
+		<section>
+			{{ content }}
+		</section>
+	</div>
+</body>
+</html>

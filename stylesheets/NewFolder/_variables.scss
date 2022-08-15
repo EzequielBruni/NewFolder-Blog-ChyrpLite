@@ -1,0 +1,72 @@
+/* GLOBAL TYPE VARIABLES */
+
+// Google font import
+
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans+Condensed:wght@700&display=swap');
+
+
+:root {
+
+	--body-font: 'Gentium Plus', serif;
+	--heading-font: 'IBM Plex Sans Condensed', sans-serif;
+	--monospace-font: 'IBM Plex Mono', monospace;
+	// Small text size
+	--small-text: 0.8em;
+	// Minimum and maximum base font size
+	--min-font-size: 16px;
+	--max-font-size: 20px;
+}
+
+
+
+/* GLOBAL COLOR VARIABLES */
+:root {
+
+	--background-color-1: rgb(238, 238, 238);
+	--background-color-2: rgb(93, 46, 79);
+	--link-hover: rgb(138, 8, 219);
+	--mildwarning-color: rgb(255, 81, 0);
+	--primary-color: rgb(243, 72, 118);
+	--secondary-color: rgb(159, 13, 54);
+	--success-color: rgb(18, 194, 62);
+	--tertiary-color: rgb(255, 224, 238);
+	--text-color-1: rgb(58, 45, 68);
+	--text-color-2: rgb(255, 255, 255);
+	--warning-color: rgba(255, 0, 0, 1);
+}
+
+	// The colors for dark-mode users
+	@media (prefers-color-scheme: dark) {
+		:root {
+
+			--background-color-1: rgb(88, 53, 73);
+			--background-color-2: rgb(103, 29, 65);
+			--body-background-dark: rgb(19, 15, 18);
+			--link-hover: rgb(160, 29, 242);
+			--mildwarning-color: rgb(255, 81, 0);
+			--primary-color: rgb(243, 72, 118);
+			--secondary-color: rgb(159, 13, 54);
+			--success-color: rgb(18, 194, 62);
+			--tertiary-color: rgb(40, 27, 33);
+			--text-color-1: rgb(255,255,255);
+			--text-color-2: rgb(255, 255, 255);
+			--warning-color: rgb(255, 45, 45);
+		}
+
+		body {
+			background: var(--body-background-dark);
+		}
+
+	}
+
+// Selection colors
+
+::-moz-selection { /* Code for Firefox */
+	background: var(--secondary-color);
+	color: var(--text-color-2);
+}
+
+::selection {
+	background: var(--secondary-color);
+	color: var(--text-color-2);
+}
