@@ -12,3 +12,14 @@ It's meant to be minimalist, easy to read, and easy to drop in to new projects. 
 * Activate the theme in the Chyrp Lite admin section, and check out the `_variables.scss` file in `newfolderblog/stylesheets/NewFolder/`.
 
 Note, you'll need a way to compile the SCSS into regular CSS. I use the Watch SASS extension in Visual Studio Code.
+
+## Screenshots:
+
+The (optional) static home page:
+![homepage](https://user-images.githubusercontent.com/1215780/184600619-1be92bd9-f803-4c7a-9723-5d10cff00cd0.png)
+
+The blog index page:
+![index](https://user-images.githubusercontent.com/1215780/184600713-7176dca0-dccb-46fe-8643-2401ca32a8e7.png)
+
+The automatic dark mode:
+![darkmode](https://user-images.githubusercontent.com/1215780/184600807-b30df987-83ae-41d4-a1a7-556a50ef5bcf.png)
