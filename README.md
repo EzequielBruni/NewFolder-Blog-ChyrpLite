@@ -2,6 +2,12 @@
 
 NewFolder Blog is a blog theme based on the [NewFolder SCSS framework](https://newfolder.dev) created by yours truly. This particular version was created for Chyrp Lite, a fantastic flat-file blogging  and micro-blogging CMS.
 
+**Notes:** 
+* This theme supports all feathers and almost all functionality except pingbacks. I've just... never had any use for them.
+* All posts *must* have a title to work properly with this theme.
+* Some theme functionality depends on having a static home page. This is non-essential.
+    * However, all of the aforementioned functionality depends on the static home page having a slug called "home". If you want a different slug, you'll need to edit the theme.
+
 ## NewFolder is a SCSS-based design framework
 
 It's meant to be minimalist, easy to read, and easy to drop in to new projects. Customize your colors and fonts, compile the SCSS files, then go. You can find the documentation for this framework on newfolder.dev.
